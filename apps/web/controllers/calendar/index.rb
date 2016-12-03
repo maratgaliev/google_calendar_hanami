@@ -3,7 +3,7 @@ module Web::Controllers::Calendar
     include Web::Action
 
     def call(params)
-		self.body = JSON.dump(Calendar::GoogleCalendar.get_events)
+		self.body = JSON.dump(Calendar::GoogleCalendar.get_events(params[:q]))
     end
   end
 end
