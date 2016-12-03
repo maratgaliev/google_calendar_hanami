@@ -11,7 +11,7 @@ module Calendar
 			                           )
 
 			cal.login_with_refresh_token(ENV['REFRESH_TOKEN'])
-			events = cal.events.map { |x| x.to_json }
+			events = cal.events.map { |x| JSON.parse(x.to_json) }
 			events
 		end
 	end
